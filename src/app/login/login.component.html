@@ -1,0 +1,129 @@
+<div class="bg-dark">
+  <section class="section">
+    <div class="d-flex flex-wrap align-items-stretch justify-content-center">
+      <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
+        <div class="p-4 m-3">
+          <img src="assets/img/logoid.jpg" alt="logo" width="80" class="shadow-light rounded-circle mb-5 mt-2">
+
+          <h4 class="text-dark font-weight-normal">Aplición Web <span class="font-weight-bold"> De notas</span></h4>
+          <p class="text-muted" *ngIf="isLogin">Ingrese sus credenciales para ingresar.</p>
+          <p class="text-muted" *ngIf="!isLogin">Crear nueva cuenta.</p>
+
+          <h4 class="text-danger" style="text-align: center;"
+                  *ngIf="msg_error">
+                  {{msg_error}}
+          </h4>
+          <form [formGroup]="formLogin" (ngSubmit)="onLogin()" *ngIf="isLogin">
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input id="usuario" type="text" class="form-control"  tabindex="1" placeholder="Usuario" formControlName="username"
+              [ngClass]="{'has-error': submitted && formLogin.get('username').invalid}" autofocus>
+              <h6 class="text-danger"
+                *ngIf="formLogin.get('username').errors?.required && submitted">
+                Usuario requerido.
+              </h6>
+            </div>
+
+            <div class="form-group">
+              <div class="d-block">
+                <label for="password" class="control-label">Password</label>
+              </div>
+              <input id="password" type="password" class="form-control" placeholder="Contraseña" formControlName="password"
+              [ngClass]="{'has-error': submitted && formLogin.get('password').invalid}" tabindex="2">
+              <h6 class="text-danger"
+                *ngIf="formLogin.get('password').errors?.required && submitted">
+                Contraseña requerida.
+              </h6>
+            </div>
+
+            <div class="d-flex justify-content-center" *ngIf="isloading">
+              <div class="semipolar-spinner" :style="spinnerStyle">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+              </div>
+            </div>
+
+            <div class="form-group text-right">
+              <button type="submit" class="btn btn-dark btn-lg " tabindex="4">
+                Login
+              </button>
+            </div>
+            </form>
+          <form [formGroup]="formRegister" (ngSubmit)="onRegister()"  *ngIf="!isLogin">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input id="name" type="text" class="form-control"  tabindex="1" placeholder="Nombre" formControlName="name"
+              [ngClass]="{'has-error': submitted && formRegister.get('name').invalid}" autofocus>
+              <h6 class="text-danger"
+                *ngIf="formRegister.get('name').errors?.required && submitted">
+                Nombre requerido.
+              </h6>
+            </div>
+            <div class="form-group">
+              <label for="name">Usuario</label>
+              <input id="username" type="text" class="form-control"  tabindex="1" placeholder="Usuario" formControlName="username"
+              [ngClass]="{'has-error': submitted && formRegister.get('username').invalid}" autofocus>
+              <h6 class="text-danger"
+                *ngIf="formRegister.get('username').errors?.required && submitted">
+                Usuario requerido.
+              </h6>
+            </div>
+            <div class="form-group">
+              <label for="name">Correo</label>
+              <input id="email" type="text" class="form-control"  tabindex="1" placeholder="Correo" formControlName="email"
+              [ngClass]="{'has-error': submitted && formRegister.get('email').invalid}" autofocus>
+              <h6 class="text-danger"
+                *ngIf="formRegister.get('email').errors?.required && submitted">
+                Correo requerido.
+              </h6>
+            </div>
+            <div class="form-group">
+              <div class="d-block">
+                <label for="password" class="control-label">Password</label>
+              </div>
+              <input id="password" type="password" class="form-control" placeholder="Contraseña" formControlName="password"
+              [ngClass]="{'has-error': submitted && formRegister.get('password').invalid}" tabindex="2">
+              <h6 class="text-danger"
+                *ngIf="formRegister.get('password').errors?.required && submitted">
+                Contraseña requerida.
+              </h6>
+            </div>
+
+            <div class="d-flex justify-content-center" *ngIf="isloading">
+              <div class="semipolar-spinner" :style="spinnerStyle">
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+                <div class="ring"></div>
+              </div>
+            </div>
+
+            <div class="form-group text-right">
+              <button type="submit" class="btn btn-dark btn-lg " tabindex="4">
+                Register
+              </button>
+            </div>
+          </form>
+          <div class="text-center mt-5 text-small">
+            Copyright &copy; José Rodríguez
+            <div class="mt-2">
+              <div class="form-group text-center">
+                <span *ngIf="isLogin">No tiene cuenta?</span>
+                <span *ngIf="!isLogin">Ya tiene cuenta?</span>
+                <a (click)="isLogin=!isLogin" class="btn btn-outline-dark btn-sm" tabindex="4">
+                  <span *ngIf="isLogin">Registrarse</span>
+                  <span *ngIf="!isLogin">Loguearse</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
