@@ -21,7 +21,6 @@ export class AuthService {
   }
 
   setLocalStorage(response) {
-    // const expires = moment().add(response.expiresIn);
     const expires = moment().add('1d');
     localStorage.setItem('token', response.token);
     localStorage.setItem('expires', JSON.stringify(expires.valueOf()));
@@ -34,16 +33,8 @@ export class AuthService {
     localStorage.removeItem('expires');
     localStorage.removeItem('user');
     localStorage.removeItem('islogged');
-    // localStorage.clear();
   }
 
-  // islogged() {
-    // return moment().isBefore(this.getExpiration());
-  // }
-
-  // isloggedout() {
-  //   return !this.islogged();
-  // }
 
   getExpiration() {
     const expiration = localStorage.getItem('expires');

@@ -1,3 +1,33 @@
 <div class="main-content">
-  asdasd
+  <section *ngIf="array_groups" class="py-3" id="section-Groups" ref="scrollComponent">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div id="containerGroups" class="row gx-4 gx-lg-5 row-cols-1 row-cols-md-3 row-cols-xl-4 justify-content-center">
+          <div class="col mb-5" *ngFor="let group of array_groups">
+            <div class="card card-group">
+                <!-- Group badge-->
+                <div class="badge badge-custom bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
+                    <div class="d-flex justify-content-center small text-warning mb-2">
+                            <span class="badge bg-outline-dark">Secundaria</span>
+                    </div>
+                </div>
+                <!-- Group image-->
+                <img class="card-img-top group-img" [src]="group.image"/>
+                <!-- Group details-->
+                <div class="card-body p-0 w-100">
+                    <div class="text-center">
+                        <!-- Group name-->
+                        <h5 class="fw-bolder p-2 bg-dark text-white">{{group.name}}</h5>
+                    </div>
+                </div>
+                <!-- Group actions-->
+                <div class="card-footer p-3 pt-0 border-top-0 bg-transparent d-flex justify-content-center">
+                  <a class="btn btn-sm btn-outline-info" type="a" [routerLink]="['/groups', group.id]">
+                    <i class="fa fa-eye"></i> UNIRME AL GRUPO
+                  </a>
+                </div>
+          </div>
+        </div>
+       </div>
+    </div>
+</section>
 </div>

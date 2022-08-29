@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { PlantillaModule } from '../plantilla/plantilla.module';
 import { PAGES_ROUTES } from './pages.routes';
 import { PagesComponent } from './pages.component';
-import { ComedoresComponent } from './comedores/comedores.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NotesgroupComponent } from './notesgroup/notesgroup.component';
 
 @NgModule({
   declarations: [
     PagesComponent,
-    ComedoresComponent,
     DashboardComponent,
+    NotesgroupComponent,
   ],
   exports: [
     PagesComponent

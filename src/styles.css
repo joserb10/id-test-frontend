@@ -1,6 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
-
 .modal-backdrop {
-  /* bug fix - no overlay */
   display: none;
 }
+
+footer{
+  position:fixed;
+  bottom:0px;
+  background-color:pink;
+  width:100%;
+}
+
+
+/*Customizar swal*/
+.swal2-title {
+  color: white !important;
+  font-size: 15px !important;
+}
+
+/*Customizar Swal Alert al buscar heroes*/
+.swal-small-cart {
+  height: 52px !important;
+  width: 300px !important;
+}
+

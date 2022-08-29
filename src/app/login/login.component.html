@@ -14,7 +14,7 @@
                   {{msg_error}}
           </h4>
           <form [formGroup]="formLogin" (ngSubmit)="onLogin()" *ngIf="isLogin">
-            <div class="form-group">
+            <div class="form-group mb-3">
               <label for="usuario">Usuario</label>
               <input id="usuario" type="text" class="form-control"  tabindex="1" placeholder="Usuario" formControlName="username"
               [ngClass]="{'has-error': submitted && formLogin.get('username').invalid}" autofocus>
@@ -24,7 +24,7 @@
               </h6>
             </div>
 
-            <div class="form-group">
+            <div class="form-group mb-3">
               <div class="d-block">
                 <label for="password" class="control-label">Password</label>
               </div>
@@ -53,7 +53,7 @@
             </div>
             </form>
           <form [formGroup]="formRegister" (ngSubmit)="onRegister()"  *ngIf="!isLogin">
-            <div class="form-group">
+            <div class="form-group mb-3">
               <label for="name">Nombre</label>
               <input id="name" type="text" class="form-control"  tabindex="1" placeholder="Nombre" formControlName="name"
               [ngClass]="{'has-error': submitted && formRegister.get('name').invalid}" autofocus>
@@ -62,7 +62,7 @@
                 Nombre requerido.
               </h6>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
               <label for="name">Usuario</label>
               <input id="username" type="text" class="form-control"  tabindex="1" placeholder="Usuario" formControlName="username"
               [ngClass]="{'has-error': submitted && formRegister.get('username').invalid}" autofocus>
@@ -71,7 +71,7 @@
                 Usuario requerido.
               </h6>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
               <label for="name">Correo</label>
               <input id="email" type="text" class="form-control"  tabindex="1" placeholder="Correo" formControlName="email"
               [ngClass]="{'has-error': submitted && formRegister.get('email').invalid}" autofocus>
@@ -80,7 +80,7 @@
                 Correo requerido.
               </h6>
             </div>
-            <div class="form-group">
+            <div class="form-group mb-3">
               <div class="d-block">
                 <label for="password" class="control-label">Password</label>
               </div>
