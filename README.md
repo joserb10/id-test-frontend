@@ -6,4 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Primero se necesita ejecutar `npm install` para poder desupues ejecutar `ng serve` lo cual ejecutará el servidor de la aplicación en el `http://localhost:4200/`.
 
+## Notas:
 
+- Se debe tener instalado node, npm y el cli de angular.
